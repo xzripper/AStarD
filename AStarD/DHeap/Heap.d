@@ -7,7 +7,7 @@
  * It is iterable and optimized to avoid useless allocations of memory.
  * Uses safe code and minimizes reliance on the garbage collector.
  *
- * https://github.com/xzripper/DHeap by Évan
+ * https://github.com/xzripper/DHeap by Evan
 */
 
 module DHeap.Heap;
@@ -111,7 +111,7 @@ struct Heap(T)
         return (m_HeapType == HeapType.MIN_HEAP) ? p_Object0 < p_Object1 : p_Object0 > p_Object1;
     }
 
-    T HeapFront() const @property @safe @nogc
+    T HeapFront() @property @safe @nogc
     {
         return m_HeapData[0];
     }

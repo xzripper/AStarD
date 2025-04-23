@@ -1,4 +1,4 @@
-// A* (A-Star) search algorithm for 2D grids by Évan (xzripper): https://github.com/xzripper/AStarD
+// A* (A-Star) search algorithm for 2D grids by Evan (xzripper): https://github.com/xzripper/AStarD
 
 module AStarD.AStar;
 
@@ -48,6 +48,8 @@ ASPath AStar(
     Heuristic p_Heuristic,
     bool p_AllowDiagonalMovement ) @safe
 {
+    if ( p_Grid.length <= 1 ) { return []; }
+
     Heap!Node t_NodesHeap = Heap!Node( HeapType.MIN_HEAP );
 
     t_NodesHeap.HeapPush( [0, p_Start[0], p_Start[1]] );
